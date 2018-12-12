@@ -12,6 +12,7 @@ import japps.ui.educore.component.DnDActivityPanel;
 import japps.ui.educore.object.Activity;
 import japps.ui.educore.object.Const;
 import japps.ui.educore.object.Learning;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Properties;
 import javax.swing.SwingUtilities;
@@ -37,15 +38,22 @@ public class DndActivityExample {
     public static Activity addDndActivity(Learning learning){
         Activity activity = learning.addNewActivity();
         
-        Const.COMMON.activity(activity, "DragAndDrop activity panel", "¡Felicidades! habeis completado la actividad de DragAndDrop", 
+        Const.COMMON.activity(activity, "Fases de la luna (Drag and drop activity)","Coloca las fases de la luna en órden, si aparece un punto rojo la posición es incorrecta, si aparece uno verde la posición sí es la correcta.", "¡Felicidades! habeis completado la actividad de fases de la luna", 
                 Paths.get("res/activities/test/media/great.png"), true);
         
-        Const.DND.activity(activity, 2, 2,300,300);
+        Const.DND.activity(activity, 2, 4,250,250);
         
-        Const.DND.option(activity.addNewOption(), "Opcion 1", "Texto de la opcion 1", true, 0, 0, Paths.get("res/activities/test/media/1.jpg"));
-        Const.DND.option(activity.addNewOption(), "Opcion 2", "Texto de la opcion 2", true, 0, 1, Paths.get("res/activities/test/media/2.jpg"));
-        Const.DND.option(activity.addNewOption(), "Opcion 3", "Texto de la opcion 3", true, 1, 0, Paths.get("res/activities/test/media/3.jpg"));
-        Const.DND.option(activity.addNewOption(), "Opcion 4", "Texto de la opcion 4", true, 1, 1, Paths.get("res/activities/test/media/4.jpg"));
+        Path dir = Paths.get("res/activities/test/media/luna/");
+        
+
+        Const.DND.option(activity.addNewOption(), "Luna nueva",           "Luna nueva",           true, 0, 0, dir.resolve("nueva.png"));
+        Const.DND.option(activity.addNewOption(), "Luna nueva visible",   "Luna nueva visible",   true, 0, 1, dir.resolve("nueva-visible.png"));
+        Const.DND.option(activity.addNewOption(), "Cuarto creciente",     "Cuarto creciente",     true, 0, 2, dir.resolve("cuarto-creciente.png"));
+        Const.DND.option(activity.addNewOption(), "Gibosa creciente",     "Gibosa creciente",     true, 0, 3, dir.resolve("gibosa-creciente.png"));
+        Const.DND.option(activity.addNewOption(), "Luna llena",           "Luna llena",           true, 1, 0, dir.resolve("llena.png"));
+        Const.DND.option(activity.addNewOption(), "Luna gibosa menguante","Luna gibosa menguante",true, 1, 1, dir.resolve("gibosa-menguante.png"));
+        Const.DND.option(activity.addNewOption(), "Cuarto menguante",     "Cuarto menguante",     true, 1, 2, dir.resolve("cuarto-menguante.png"));
+        Const.DND.option(activity.addNewOption(), "Luna menguante",       "Luna menguante",       true, 1, 3, dir.resolve("menguante.png"));
         
         return activity;
     }

@@ -15,6 +15,7 @@ import japps.ui.educore.object.ActivityOption;
 import static japps.ui.educore.object.ActivityOption.*;
 import japps.ui.educore.object.Const;
 import japps.ui.educore.object.Learning;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Properties;
 import javax.swing.SwingUtilities;
@@ -40,26 +41,21 @@ public class ChooseActivityExample {
     
     public static Activity addChooseActivity(Learning learning){
         Activity activity = learning.addNewActivity();
-        Const.COMMON.activity(activity, "Choose activity panel", "¡Felicidades! habeis completado la actividad de seleccion", 
+        Const.COMMON.activity(activity, "Choose activity panel",null, "¡Felicidades! habeis completado la actividad de seleccion", 
                 Paths.get("res/activities/test/media/great.png"), true);
-        Const.CHOOSE.activity(activity,2, 2, 300, 250);
+        Const.CHOOSE.activity(activity,2, 4, 150, 150);
+                
+        Path dir = Paths.get("res/activities/test/media/traffic-signals");
+        Const.CHOOSE.option(activity.addNewOption(), "Curva (with image)", dir.resolve("signal-curva.png"), dir.resolve("curva.jpg"), Media.IMAGE, null, false);
+        Const.CHOOSE.option(activity.addNewOption(), "Cruce (with image)", dir.resolve("signal-cruce.png"), dir.resolve("cruce.jpg"), Media.IMAGE, null, false);
+        Const.CHOOSE.option(activity.addNewOption(), "Camino sinuoso (with video)", dir.resolve("signal-curves.png"),dir.resolve("curves.mp4"), Media.VIDEO, null, false); 
+        Const.CHOOSE.option(activity.addNewOption(), "Trabajadores en el camino (with sound)", dir.resolve("signal-trabajadores.png"), dir.resolve("trabajo.mp3"), Media.SOUND, null,false);
         
-        ActivityOption option1 = activity.addNewOption();
-        ActivityOption option2 = activity.addNewOption();
-        ActivityOption option3 = activity.addNewOption();
-        ActivityOption option4 = activity.addNewOption();
+        Const.CHOOSE.option(activity.addNewOption(), "Paso peatonal (with text speech)", dir.resolve("signal5.png"),       null, 0, "Indica un camino con constante paso peatonal o un cruce peatonal en específico.", true);
+        Const.CHOOSE.option(activity.addNewOption(), "Zona de derrumbes (with text speech)", dir.resolve("signal6.png"),   null, 0, "Advierte sobre una zona en la cual pueden ocurrir derrumbes.", true);
+        Const.CHOOSE.option(activity.addNewOption(), "Ganado  (with text speech)", dir.resolve("signal7.png"),             null, 0, "Indica la posibilidad de encontrar ganado en el camino.", true);
+        Const.CHOOSE.option(activity.addNewOption(), "Pendiente peligrosa (with text speech)", dir.resolve("signal8.png"), null, 0, "Advierte sobre un camino en descenso en el cual habrá que frenar constantemente.", true);
         
-        Const.CHOOSE.option(option1, "This is the option number one", Paths.get("res/activities/test/media/1.jpg"), 
-                Paths.get("res/activities/test/media/i2.jpg"), Media.IMAGE, null, false);
-
-        Const.CHOOSE.option(option2, "This is the option number two", Paths.get("res/activities/test/media/2.jpg"), 
-                Paths.get("res/activities/test/media/video.mp4"), Media.VIDEO, null, false);
-        
-        Const.CHOOSE.option(option3, "This is the option number three", Paths.get("res/activities/test/media/3.jpg"), 
-                Paths.get("res/activities/test/media/m.mp3"), Media.SOUND, null, false);
-        
-        Const.CHOOSE.option(option4, "This is the option number four", Paths.get("res/activities/test/media/4.jpg"), 
-                null, 0, "his is the text of option number four", true);
         return activity;
     }
     

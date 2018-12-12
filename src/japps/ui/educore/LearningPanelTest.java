@@ -30,7 +30,7 @@ public class LearningPanelTest {
         Learning learning = new Learning("test", properties);
         
         Const.LEARNING.set(learning, "Learning test", "Esta es una leccion de prueba", "Ha finalizado la leccion", 
-                Paths.get("res/activities/test/media/i2.jpg"), true, true);
+                Paths.get("res/activities/test/media/i2.jpg"), true, false);
         
         DndActivityExample.addDndActivity(learning);
         InteractiveImageActivityExample.addInteractiveImageActivity(learning);

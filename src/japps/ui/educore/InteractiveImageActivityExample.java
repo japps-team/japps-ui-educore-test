@@ -33,7 +33,7 @@ public class InteractiveImageActivityExample {
     public static Activity addInteractiveImageActivity(Learning learning){
         Activity activity = learning.addNewActivity();
         
-        Const.COMMON.activity(activity, "Actividad de imagen interactiva", "Haz finalizado la actividad de imagen interactiva", null, true);
+        Const.COMMON.activity(activity, "Actividad de imagen interactiva",null, "Haz finalizado la actividad de imagen interactiva", null, true);
         Const.INTERACTIVE_IMAGE.activity(activity, Paths.get("res/activities/test/media/i3.jpg"));
         
         

@@ -40,7 +40,7 @@ public class MemoryActivityExample {
         ActivityOption o3 = activity.addNewOption();
         ActivityOption o4 = activity.addNewOption();
         
-        Const.COMMON.activity(activity, "Memory activity panel", "¡Felicidades! habeis completado la actividad de memoria", 
+        Const.COMMON.activity(activity, "Memory activity panel",null, "¡Felicidades! habeis completado la actividad de memoria", 
                 Paths.get("res/activities/test/media/great.png"), true);
         Const.MEMORY.activity(activity, 2, 4, 300, 300, Paths.get("res/activities/test/media/i2.jpg"));
         
