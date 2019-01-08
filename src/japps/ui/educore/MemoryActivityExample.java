@@ -41,13 +41,13 @@ public class MemoryActivityExample {
         ActivityOption o4 = activity.addNewOption();
         
         Const.COMMON.activity(activity, "Memory activity panel",null, "¡Felicidades! habeis completado la actividad de memoria", 
-                Paths.get("res/activities/test/media/great.png"), true);
-        Const.MEMORY.activity(activity, 2, 4, 300, 300, Paths.get("res/activities/test/media/i2.jpg"));
+                Paths.get("learnings/test/media/great.png"), true,false);
+        Const.MEMORY.activity(activity, 2, 4, 300, 300, Paths.get("learnings/test/media/i2.jpg"));
         
-        Const.MEMORY.option(o1, Paths.get("res/activities/test/media/1.jpg"), "Texto opción 1", true);
-        Const.MEMORY.option(o2, Paths.get("res/activities/test/media/2.jpg"), "Texto opción 2", true);
-        Const.MEMORY.option(o3, Paths.get("res/activities/test/media/3.jpg"), "Texto opción 3", true);
-        Const.MEMORY.option(o4, Paths.get("res/activities/test/media/4.jpg"), "Texto opción 4", true);
+        Const.MEMORY.option(o1, Paths.get("learnings/test/media/1.jpg"), "Texto opción 1", true);
+        Const.MEMORY.option(o2, Paths.get("learnings/test/media/2.jpg"), "Texto opción 2", true);
+        Const.MEMORY.option(o3, Paths.get("learnings/test/media/3.jpg"), "Texto opción 3", true);
+        Const.MEMORY.option(o4, Paths.get("learnings/test/media/4.jpg"), "Texto opción 4", true);
         return activity;
     }
     

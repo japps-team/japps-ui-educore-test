@@ -38,12 +38,16 @@ public class DndActivityExample {
     public static Activity addDndActivity(Learning learning){
         Activity activity = learning.addNewActivity();
         
-        Const.COMMON.activity(activity, "Fases de la luna (Drag and drop activity)","Coloca las fases de la luna en órden, si aparece un punto rojo la posición es incorrecta, si aparece uno verde la posición sí es la correcta.", "¡Felicidades! habeis completado la actividad de fases de la luna", 
-                Paths.get("res/activities/test/media/great.png"), true);
+        Const.COMMON.activity(activity, "Fases de la luna (Drag and drop activity)",
+                "<html>Hola {name}.\n<br/>Coloca las fases de la luna en órden.\n<br/>"
+                        + "Si aparece un punto rojo la posición es incorrecta.\n<br/>"
+                        + "Si aparece uno verde la posición sí es la correcta.\n</html>", 
+                "¡Felicidades {name}! habeis completado la actividad de fases de la luna", 
+                Paths.get("learnings/test/media/great.png"), true,false);
         
         Const.DND.activity(activity, 2, 4,250,250);
         
-        Path dir = Paths.get("res/activities/test/media/luna/");
+        Path dir = Paths.get("learnings/test/media/luna/");
         
 
         Const.DND.option(activity.addNewOption(), "Luna nueva",           "Luna nueva",           true, 0, 0, dir.resolve("nueva.png"));

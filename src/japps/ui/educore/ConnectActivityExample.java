@@ -41,10 +41,10 @@ public class ConnectActivityExample {
         Activity activity = learning.addNewActivity();
 
         
-        Const.COMMON.activity(activity, "Figuras geométricas (Actividad de Conexión)","Una las imagenes de arriba con su correspondiente de abajo", "¡Felicidades! habeis completado la actividad de conexión de figuras geométricas", Paths.get("res/activities/test/media/great.png"), true);
+        Const.COMMON.activity(activity, "Figuras geométricas (Actividad de Conexión)","Una las imagenes de arriba con su correspondiente de abajo", "¡Felicidades! habeis completado la actividad de conexión de figuras geométricas", Paths.get("learnings/test/media/great.png"), true,true);
         Const.CONNECT.activity(activity, 150, 150,true);
         
-        Path dir = Paths.get("res/activities/test/media/geometric-figures");
+        Path dir = Paths.get("learnings/test/media/geometric-figures");
         
         ActivityOption  o1 = activity.addNewOption(),
                         o2 = activity.addNewOption(),

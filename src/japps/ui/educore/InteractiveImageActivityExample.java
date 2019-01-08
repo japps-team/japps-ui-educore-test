@@ -33,15 +33,15 @@ public class InteractiveImageActivityExample {
     public static Activity addInteractiveImageActivity(Learning learning){
         Activity activity = learning.addNewActivity();
         
-        Const.COMMON.activity(activity, "Actividad de imagen interactiva",null, "Haz finalizado la actividad de imagen interactiva", null, true);
-        Const.INTERACTIVE_IMAGE.activity(activity, Paths.get("res/activities/test/media/i3.jpg"));
+        Const.COMMON.activity(activity, "Actividad de imagen interactiva",null, "Haz finalizado la actividad de imagen interactiva", null, true,true);
+        Const.INTERACTIVE_IMAGE.activity(activity, Paths.get("learnings/test/media/i3.jpg"));
         
         
-        Const.INTERACTIVE_IMAGE.option(activity.addNewOption(), "Cabeza","Esta es la cabeza", Paths.get("res/activities/test/media/cabeza.jpg"), Media.IMAGE, true,  5, 20);
-        Const.INTERACTIVE_IMAGE.option(activity.addNewOption(), "Brazo","Este es el brazo izquierdo", Paths.get("res/activities/test/media/brazo.jpg"), Media.IMAGE, true,   15, 12);
-        Const.INTERACTIVE_IMAGE.option(activity.addNewOption(), "Brazo","Este es el brazo derecho", Paths.get("res/activities/test/media/brazo.jpg"), Media.IMAGE, true,   15, 27);
-        Const.INTERACTIVE_IMAGE.option(activity.addNewOption(), "Pierna","Esta es la pierna izquierda", Paths.get("res/activities/test/media/pierna.jpg"), Media.IMAGE, true,  30, 16);
-        Const.INTERACTIVE_IMAGE.option(activity.addNewOption(), "Pierna","Pierna derecha", Paths.get("res/activities/test/media/pierna.jpg"), Media.IMAGE, true,  30, 23);
+        Const.INTERACTIVE_IMAGE.option(activity.addNewOption(), "Cabeza","Esta es la cabeza", Paths.get("learnings/test/media/cabeza.jpg"), Media.IMAGE, true,  5, 20);
+        Const.INTERACTIVE_IMAGE.option(activity.addNewOption(), "Brazo","Este es el brazo izquierdo", Paths.get("learnings/test/media/brazo.jpg"), Media.IMAGE, true,   15, 12);
+        Const.INTERACTIVE_IMAGE.option(activity.addNewOption(), "Brazo","Este es el brazo derecho", Paths.get("learnings/test/media/brazo.jpg"), Media.IMAGE, true,   15, 27);
+        Const.INTERACTIVE_IMAGE.option(activity.addNewOption(), "Pierna","Esta es la pierna izquierda", Paths.get("learnings/test/media/pierna.jpg"), Media.IMAGE, true,  30, 16);
+        Const.INTERACTIVE_IMAGE.option(activity.addNewOption(), "Pierna","Pierna derecha", Paths.get("learnings/test/media/pierna.jpg"), Media.IMAGE, true,  30, 23);
 
         return activity;
     }

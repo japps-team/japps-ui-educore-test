@@ -42,10 +42,10 @@ public class ChooseActivityExample {
     public static Activity addChooseActivity(Learning learning){
         Activity activity = learning.addNewActivity();
         Const.COMMON.activity(activity, "Choose activity panel",null, "¡Felicidades! habeis completado la actividad de seleccion", 
-                Paths.get("res/activities/test/media/great.png"), true);
-        Const.CHOOSE.activity(activity,2, 4, 150, 150);
+                Paths.get("learnings/test/media/great.png"), true,true);
+        Const.CHOOSE.activity(activity,2, 4, 150, 150,true);
                 
-        Path dir = Paths.get("res/activities/test/media/traffic-signals");
+        Path dir = Paths.get("learnings/test/media/traffic-signals");
         Const.CHOOSE.option(activity.addNewOption(), "Curva (with image)", dir.resolve("signal-curva.png"), dir.resolve("curva.jpg"), Media.IMAGE, null, false);
         Const.CHOOSE.option(activity.addNewOption(), "Cruce (with image)", dir.resolve("signal-cruce.png"), dir.resolve("cruce.jpg"), Media.IMAGE, null, false);
         Const.CHOOSE.option(activity.addNewOption(), "Camino sinuoso (with video)", dir.resolve("signal-curves.png"),dir.resolve("curves.mp4"), Media.VIDEO, null, false); 
